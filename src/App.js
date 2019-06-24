@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MyComponent from './components/MyComponent';
+import Filter from './components/Filter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* We can use the same component multiple times, passing through different props that all have their own instance of the passed down object from the render props component. Refer to MyComponent and StateTracker if that's confusing */}
+      <MyComponent title="First Component" />
+      <MyComponent title="Second Component" />
+      <Filter />
+      <Filter />
     </div>
   );
 }
 
 export default App;
+
+// Example of Render props in react-router docs
+{
+  /* <Route path={`${match.path}/:id`} component={Topic} />
+      <Route
+        exact
+        path={match.path}
+        render={() => <h3>Please select a topic.</h3>}
+      /> */
+}
